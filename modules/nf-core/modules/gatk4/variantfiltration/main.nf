@@ -29,7 +29,7 @@ process GATK4_VARIANTFILTRATION {
     if (!task.memory) {
         log.info '[GATK VariantFiltration] Available memory not known - defaulting to 3GB. Specify process memory requirements to change this.'
     } else {
-        avail_mem = task.memory.toGiga()
+        avail_mem = task.memory.toGiga() * 0.8
     }
     """
     gatk --java-options "-Xmx${avail_mem}G" VariantFiltration \\
