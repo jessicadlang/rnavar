@@ -24,7 +24,7 @@ process GATK4_CREATESEQUENCEDICTIONARY {
     if (!task.memory) {
         log.info '[GATK CreateSequenceDictionary] Available memory not known - defaulting to 6GB. Specify process memory requirements to change this.'
     } else {
-        avail_mem = int (task.memory.giga * 0.75)
+        avail_mem = 27
     }
     """
     gatk --java-options "-Xmx${avail_mem}g" CreateSequenceDictionary \\
